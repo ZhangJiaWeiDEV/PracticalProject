@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.order.dao.GoodsDao">
+
+    <insert id="insert" parameterType="com.example.order.modal.Goods" keyColumn="id" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into goods (id, name, price, picture, description, status) values (#{id}, #{name}, #{price}, #{picture}, #{description}, 0)
+    </insert>
+
+    <delete id="delete" parameterType="com.example.order.modal.Goods">
+        delete from goods where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.example.order.modal.Goods">
+        update goods set id=#{id}, name=#{name}, price=#{price}, picture=#{picture}, description=#{description}, status=#{status} where id=#{id}
+    </update>
+
+    <select id="findAll" resultType="com.example.order.modal.Goods">
+        select * from goods
+    </select>
+
+    <select id="isGoodsNameExit" resultType="java.lang.Boolean">
+        select case when COUNT(*)>0 then true when count(*)=0 then false end from goods where name = #{name}
+    </select>
+
+    <update id="upGoods" parameterType="com.example.order.modal.Goods">
+        update goods set status=0 where id=#{id}
+    </update>
+
+    <update id="offGoods" parameterType="com.example.order.modal.Goods">
+        update goods set status=1 where id=#{id}
+    </update>
+
+    <select id="getGoods" resultType="com.example.order.modal.Goods">
+        select * from goods where id = #{id}
+    </select>
+
+    <select id="getGoodsByName" resultType="com.example.order.modal.Goods">
+        select * from goods where name like #{name}
+    </select>
+
+    <select id="getUpGoods" resultType="com.example.order.modal.Goods">
+        select * from goods where status=0
+    </select>
+</mapper>

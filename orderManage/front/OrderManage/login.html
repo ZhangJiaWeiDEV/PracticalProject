@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/premium.css">
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+</head>
+
+<body class=" theme-blue">
+
+    <!-- Demo page code -->
+    <style type="text/css">
+        #line-chart {
+            height: 300px;
+            width: 800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+
+        .navbar-default .navbar-brand,
+        .navbar-default .navbar-brand:hover {
+            color: #fff;
+        }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
+
+    <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+    <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+    <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+    <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!-->
+
+    <!--<![endif]-->
+
+    <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="" href="index.html"><span class="navbar-brand"><span class="fa fa-paper-plane"></span>
+                    活动管理系统</span></a></div>
+
+        <div class="navbar-collapse collapse" style="height: 1px;">
+
+        </div>
+    </div>
+
+
+    <div class="dialog">
+        <div class="panel panel-default">
+            <p class="panel-heading no-collapse">请登录</p>
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label>电话号码</label>
+                        <input type="text" class="form-control span12" id="account">
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input type="password" class="form-controlspan12 form-control" id="password">
+                    </div>
+                    <button type="button" class="btn btn-primary pull-right" onclick="login()">登录</button>
+                    <label class="remember-me"><input type="checkbox"> 记住密码</label>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+        <p><a href="" data-toggle="modal" data-target="#signupModal">注册</a></p>
+
+        <div class="modal small fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+            aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" style="width: 800px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="signupModalLabel">注册</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4">
+                                        <p>*手机号码： </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <input id="telNumber" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4">
+                                        <p>*姓名： </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <input id="name" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-2">
+                                <p>*密码： </p>
+                            </div>
+                            <div class="col-sm-6 col-md-10">
+                                <input id="signupPassword" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-2">
+                                <p>确认密码： </p>
+                            </div>
+                            <div class="col-sm-6 col-md-10">
+                                <input id="testPassword" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-2">
+                                <p>验证码： </p>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <input id="text" type="text" class="form-control" placeholder="请输入验证码（区分大小写）">
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <canvas id="canvas" width="100px" height="43px" onclick="dj()"
+                                    style="border: 1px solid #ccc;border-radius: 5px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">取消</button>
+                        <button class="btn btn-danger" onclick="sublim()">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $.cookie("account", "");
+
+        var user = 0;
+
+        function login() {
+            var account = document.getElementById("account").value;
+            var password = document.getElementById("password").value;
+            var jsonData = {
+                telNumber: account,
+                password: password
+            }
+            user = getJSON("POST", "http://127.0.0.1:8880/login", JSON.stringify(jsonData))
+            setTimeout(function () {
+                switch (user) {
+                    case 200:
+                        $.cookie("account", account);
+                        location.replace("index.html");
+                        break;
+                    case 106:
+                        alert("密码错误");
+                        break;
+                    case 105:
+                        alert("账号不存在");
+                        break;
+                    default:
+                        alert("未知代码:" + user.mark);
+                        break;
+                }
+            }, 500);
+        }
+
+    </script>
+
+</body>
+<script>
+    var result = 0;
+    var show_num = [];
+    draw(show_num);
+    function dj() {
+        draw(show_num);
+    }
+    function sublim() {
+        if (document.getElementById("telNumber").value == "" || document.getElementById("name").value == "" ||
+            document.getElementById("signupPassword").value == "" ||
+            document.getElementById("testPassword").value == "" || document.getElementById("text").value == "") {
+
+            alert("尚未输入完毕");
+            return;
+        }
+
+        var val = document.getElementById("text").value;
+        var num = show_num.join("");
+        if (val == '') {
+            alert('请输入验证码！');
+        } else if (val == num) {
+            save();
+            draw(show_num);
+        } else {
+            //alert('验证码错误！\n你输入的是:  ' + val + "\n正确的是:  " + num + '\n请重新输入！');
+            alert("验证码错误");
+            document.getElementById("text").value = '';
+            draw(show_num);
+        }
+    }
+    function draw(show_num) {
+
+        var canvas_width = document.getElementById("canvas").clientWidth;
+        var canvas_height = document.getElementById("canvas").clientHeight;
+        var canvas = document.getElementById("canvas");//获取到canvas的对象，演员
+        var context = canvas.getContext("2d");//获取到canvas画图的环境，演员表演的舞台
+        canvas.width = 100;
+        canvas.height = 43;
+        var sCode = "A,B,C,E,F,G,H,J,K,L,M,N,P,Q,R,S,T,W,X,Y,Z,1,2,3,4,5,6,7,8,9,0,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m";
+        var aCode = sCode.split(",");
+        var aLength = aCode.length;//获取到数组的长度
+
+        for (var i = 0; i <= 3; i++) {
+            var j = Math.floor(Math.random() * aLength);//获取到随机的索引值
+            var deg = Math.random() * 30 * Math.PI / 180;//产生0~30之间的随机弧度
+            var txt = aCode[j];//得到随机的一个内容
+            show_num[i] = txt;
+            var x = 10 + i * 20;//文字在canvas上的x坐标
+            var y = 20 + Math.random() * 8;//文字在canvas上的y坐标
+            context.font = "bold 23px 微软雅黑";
+
+            context.translate(x, y);
+            context.rotate(deg);
+
+            context.fillStyle = randomColor();
+            context.fillText(txt, 0, 0);
+
+            context.rotate(-deg);
+            context.translate(-x, -y);
+        }
+        for (var i = 0; i <= 5; i++) { //验证码上显示线条
+            context.strokeStyle = randomColor();
+            context.beginPath();
+            context.moveTo(Math.random() * canvas_width, Math.random() * canvas_height);
+            context.lineTo(Math.random() * canvas_width, Math.random() * canvas_height);
+            context.stroke();
+        }
+        for (var i = 0; i <= 30; i++) { //验证码上显示小点
+            context.strokeStyle = randomColor();
+            context.beginPath();
+            var x = Math.random() * canvas_width;
+            var y = Math.random() * canvas_height;
+            context.moveTo(x, y);
+            context.lineTo(x + 1, y + 1);
+            context.stroke();
+        }
+    }
+    function randomColor() {//得到随机的颜色值
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
+
+    function save() {
+        if (document.getElementById("signupPassword").value != document.getElementById("testPassword").value) {
+            alert("两次密码不一致");
+            return;
+        }
+        if (document.getElementById("name").value.length > 10) {
+            alert("姓名不能超过10个字符");
+            return;
+        }
+        var jsonData = {
+            telNumber: document.getElementById("telNumber").value,
+            name: document.getElementById("name").value,
+            password: document.getElementById("signupPassword").value,
+            property: 1000
+        }
+        switch (getJSON("POST", "http://127.0.0.1:8880/insertUser", JSON.stringify(jsonData))) {
+            case 100:
+                document.getElementById("telNumber").value = "";
+                document.getElementById("name").value = "";
+                document.getElementById("signupPassword").value = "";
+                document.getElementById("testPassword").value = "";
+                document.getElementById("text").value = "";
+                $('#signupModal').modal('hide');
+                break;
+            case 102:
+                alert("手机号已被注册")
+                return;
+            case 103:
+                alert("手机号长度应为11位")
+                return;
+            default:
+                break;
+        }
+    }
+
+    function getJSON(type, url, jsonData) {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                return xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open(type, url, false);
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send(jsonData);
+        if (xmlhttp.responseText != null) {
+            return JSON.parse(xmlhttp.responseText);
+        }
+    }
+</script>
+
+</html>

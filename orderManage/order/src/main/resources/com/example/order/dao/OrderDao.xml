@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.order.dao.OrderDao">
+
+    <insert id="insert" parameterType="com.example.order.modal.Order" keyColumn="id" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into order.order (id, userId, goodsId, price, address, time, status) values (#{id}, #{userId}, #{goodsId}, #{price}, #{address}, #{time}, #{status})
+    </insert>
+
+    <select id="findAll" resultType="com.example.order.modal.Order">
+        select * from order.order
+    </select>
+
+    <select id="findByUser" resultType="com.example.order.modal.Order">
+        select * from order.order where userId=#{userId}
+    </select>
+
+    <update id="cancel" parameterType="com.example.order.modal.Order">
+        update order.order set status=1 where id=#{id}
+    </update>
+
+    <update id="finish" parameterType="com.example.order.modal.Order">
+        update order.order set status=2 where id=#{id}
+    </update>
+
+    <select id="getOrderById" resultType="com.example.order.modal.Order">
+        select * from order.order where id=#{id}
+    </select>
+
+    <select id="getOrderByStatus" resultType="com.example.order.modal.Order">
+        select * from order.order where status=#{status}
+    </select>
+</mapper>
