@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.activity.dao.UserDao">
+
+    <insert id="insert" parameterType="com.example.activity.model.User" keyColumn="id" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into user (id, telNumber, name, password, avatar, organization, anonymity) values (#{id}, #{telNumber}, #{name}, #{password}, #{avatar}, #{organization}, #{anonymity})
+    </insert>
+
+    <delete id="delete" parameterType="com.example.activity.model.User">
+        delete from user where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.example.activity.model.User">
+        update user set id=#{id}, telNumber=#{telNumber}, name=#{name}, password=#{password}, avatar=#{avatar}, organizationId=#{organizationId}, anonymity=#{anonymity} where id=#{id}
+    </update>
+
+    <select id="isTelNumberExit" resultType="java.lang.Boolean">
+        select case when COUNT(*)>0 then true when count(*)=0 then false end from user where telNumber = #{telNumber}
+    </select>
+
+    <select id="isAnonymityExit" resultType="java.lang.Boolean">
+        select case when COUNT(*)>0 then true when count(*)=0 then false end from user where anonymity = #{anonymity}
+    </select>
+
+    <select id="login" resultType="com.example.activity.model.User">
+        select * from user where telNumber=#{telNumber}
+    </select>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.activity.dao.LikeDao">
+    <insert id="insert" parameterType="com.example.activity.model.Like" keyColumn="id" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into activity_manage.like (id, userId, userName, activityId, likeTime) values (#{id}, #{userId}, #{userName}, #{activityId}, #{likeTime})
+    </insert>
+
+    <delete id="delete" parameterType="com.example.activity.model.Like">
+        delete from activity_manage.like where userId = #{userId} and activityId = #{activityId}
+    </delete>
+
+    <select id="getLikeByUser" resultType="com.example.activity.model.Like">
+        select * from activity_manage.like where userId=#{userId}
+    </select>
+
+    <select id="getLikeByActivity" resultType="com.example.activity.model.Like">
+        select * from activity_manage.like where activityId=#{activityId}
+    </select>
+
+    <select id="isLikeExit" resultType="java.lang.Boolean">
+        select case when COUNT(*)>0 then true when count(*)=0 then false end from activity_manage.like where userId = #{userId} and activityId = #{activityId}
+    </select>
+</mapper>

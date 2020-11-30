@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.activity.dao.CommentDao">
+    <insert id="insert" parameterType="com.example.activity.model.Comment" keyColumn="id" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into comment (id, userId, userName, activityId, commentTime, content)
+        values (#{id}, #{userId}, #{userName}, #{activityId}, #{commentTime}, #{content})
+    </insert>
+
+    <delete id="delete" parameterType="com.example.activity.model.Comment">
+        delete from comment where id = #{id}
+    </delete>
+
+    <select id="getCommentByUser" resultType="com.example.activity.model.Comment">
+        select * from comment where userId=#{userId}
+    </select>
+
+    <select id="getCommentByActivity" resultType="com.example.activity.model.Comment">
+        select * from comment where activityId=#{activityId}
+    </select>
+</mapper>

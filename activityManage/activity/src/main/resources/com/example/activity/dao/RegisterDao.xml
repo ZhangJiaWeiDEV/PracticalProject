@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.activity.dao.RegisterDao">
+    <insert id="insert" parameterType="com.example.activity.model.Register" keyColumn="id" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into register (id, userId, activityId, avatar, name, organization, registerTime)
+        values (#{id}, #{userId}, #{activityId}, #{avatar}, #{name}, #{organization}, #{registerTime})
+    </insert>
+
+    <delete id="delete" parameterType="com.example.activity.model.Register">
+        delete from register where userId = #{userId} and activityId = #{activityId}
+    </delete>
+
+    <select id="getRegisterByUser" resultType="com.example.activity.model.Register">
+        select * from register where userId=#{userId}
+    </select>
+
+    <select id="getRegisterByActivity" resultType="com.example.activity.model.Register">
+        select * from register where activityId=#{activityId}
+    </select>
+
+    <select id="isRegisterExit" resultType="java.lang.Boolean">
+        select case when COUNT(*)>0 then true when count(*)=0 then false end from register where userId = #{userId} and activityId = #{activityId}
+    </select>
+</mapper>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.activity.dao.ActivityDao">
+
+    <insert id="insert" parameterType="com.example.activity.model.Activity" keyColumn="id" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into activity (id, organization, theme, cover, summary, startTime, endTime, location, registerStartTime, registerEndTime, quota, description, demand, registerNumber, commentNumber, likeNumber, status) values (#{id}, #{organization}, #{theme}, #{cover}, #{summary}, #{startTime}, #{endTime}, #{location}, #{registerStartTime}, #{registerEndTime}, #{quota}, #{description}, #{demand}, #{registerNumber}, #{commentNumber}, #{likeNumber}, #{status})
+    </insert>
+
+    <update id="cancel" parameterType="com.example.activity.model.Activity">
+        update activity set status=1 where id=#{id}
+    </update>
+
+    <update id="update" parameterType="com.example.activity.model.Activity">
+        update activity set summary=#{summary}, startTime=#{startTime}, endTime=#{endTime}, location=#{location}, registerStartTime=#{registerStartTime},
+        registerEndTime=#{registerEndTime}, quota=#{quota}, description=#{description}, demand=#{demand} where id=#{id}
+    </update>
+
+    <select id="findAll" resultType="com.example.activity.model.Activity">
+        select * from activity
+    </select>
+
+    <select id="getActivity" resultType="com.example.activity.model.Activity">
+        select * from activity where theme=#{theme}
+    </select>
+
+    <select id="isThemeExit" resultType="java.lang.Boolean">
+        select case when COUNT(*)>0 then true when count(*)=0 then false end from activity where theme = #{theme}
+    </select>
+
+    <update id="addRegisterNumber" parameterType="com.example.activity.model.Activity">
+        update activity set registerNumber=registerNumber+1 where id=#{id}
+    </update>
+
+    <update id="minusRegisterNumber" parameterType="com.example.activity.model.Activity">
+        update activity set registerNumber=registerNumber-1 where id=#{id}
+    </update>
+
+    <update id="addCommentNumber" parameterType="com.example.activity.model.Activity">
+        update activity set commentNumber=commentNumber+1 where id=#{id}
+    </update>
+
+    <update id="minusCommentNumber" parameterType="com.example.activity.model.Activity">
+        update activity set commentNumber=commentNumber-1 where id=#{id}
+    </update>
+
+    <update id="addLikeNumber" parameterType="com.example.activity.model.Activity">
+        update activity set likeNumber=likeNumber+1 where id=#{id}
+    </update>
+
+    <update id="minusLikeNumber" parameterType="com.example.activity.model.Activity">
+        update activity set likeNumber=likeNumber-1 where id=#{id}
+    </update>
+</mapper>
