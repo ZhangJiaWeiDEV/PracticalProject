@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>用户管理</title>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-table.css">
+
+  <script src="lib/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <script src="lib/bootstrap/js/jquery.cookie.js"></script>
+  <script src="lib/bootstrap/js/bootstrap-table.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/premium.css">
+
+</head>
+
+<body class=" theme-blue">
+
+  <!-- Demo page code -->
+
+  <script type="text/javascript">
+    $(function () {
+      var match = document.cookie.match(new RegExp('color=([^;]+)'));
+      if (match) var color = match[1];
+      if (color) {
+        $('body').removeClass(function (index, css) {
+          return (css.match(/\btheme-\S+/g) || []).join(' ')
+        })
+        $('body').addClass('theme-' + color);
+      }
+
+      $('[data-popover="true"]').popover({ html: true });
+
+    });
+  </script>
+  <style type="text/css">
+    #line-chart {
+      height: 300px;
+      width: 800px;
+      margin: 0px auto;
+      margin-top: 1em;
+    }
+
+    .navbar-default .navbar-brand,
+    .navbar-default .navbar-brand:hover {
+      color: #fff;
+    }
+  </style>
+
+  <script type="text/javascript">
+    $(function () {
+      var uls = $('.sidebar-nav > ul > *').clone();
+      uls.addClass('visible-xs');
+      $('#main-menu').append(uls.clone());
+    });
+  </script>
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
+
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+
+  <!--<![endif]-->
+
+  <div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <a class="" href="index.html"><span class="navbar-brand"><span class="fa fa-paper-plane"></span>
+          简易企业人事信息管理系统</span></a></div>
+
+    <div class="navbar-collapse collapse" style="height: 1px;">
+      <ul id="main-menu" class="nav navbar-nav navbar-right">
+        <li class="dropdown hidden-xs">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="a">
+            <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span>
+            <i class="fa fa-caret-down"></i>
+          </a>
+          <script>
+            var user_name = JSON.parse($.cookie("user")).login_name;
+            document.getElementById("a").innerHTML = "<span class='glyphicon glyphicon-user padding-right-small' style='position:relative;top: 3px;''></span>" + user_name + " <i class='fa fa-caret-down'></i>";
+          </script>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">个人界面</a></li>
+            <li class="divider"></li>
+            <li><a tabindex="-1" href="sign-in.html">退出登录</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+
+  <div class="sidebar-nav">
+    <ul>
+      <li><a href="#" data-target=".dashboard-menu" class="nav-header" data-toggle="collapse"><i
+            class="fa fa-fw fa-dashboard"></i> 主页<i class="fa fa-collapse"></i></a></li>
+      <li>
+        <ul class="dashboard-menu nav nav-list collapse in">
+          <li><a href="index.html"><span class="fa fa-caret-right"></span> 个人界面</a></li>
+          <li><a href="users.html"><span class="fa fa-caret-right"></span> 用户管理</a></li>
+          <li><a href="user.html"><span class="fa fa-caret-right"></span> 接口日志</a></li>
+          <li><a href="media.html"><span class="fa fa-caret-right"></span> 登录日志</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="header">
+
+      <h1 class="page-title">用户管理</h1>
+      <ul class="breadcrumb">
+        <li><a href="index.html">主页</a> </li>
+        <li class="active">用户管理</li>
+      </ul>
+
+    </div>
+    <div class="main-content">
+
+      <div class="btn-toolbar list-toolbar">
+        <button class="btn btn-primary" id="create_btn"><i class="fa fa-plus"></i> 新增</button>
+        <button class="btn btn-default" id="update_btn">修改</button>
+        <button class="btn btn-default" id="delete_btn">删除</button>
+        <button class="btn btn-default" id="save_btn" disabled="true">保存</button>
+        <div class="btn-group">
+        </div>
+      </div>
+      <table class="table" id="userTable"></table>
+
+      <script>
+        $("#userTable").bootstrapTable({
+          url: "http://118.190.90.167:8880/user",       //发送get请求的url地址
+          uniqueId: "id",      //唯一主键
+          pagination: true,       //是否分页
+          pageSize: 10,           //每页的记录行数
+          search: true,           //是否显示搜索框
+          toolbar: "#toolbar",     //工具栏容器，左上方
+          columns: [
+            {
+              field: "id",
+              title: "序号",
+              align: "center",
+              edit: false,
+              formatter: function (value, row, index) {
+                return row.index = index + 1;
+              }
+            },
+            {
+              field: "name",
+              title: "姓名",
+              align: "center",
+            }, {
+              field: "tel_number",
+              title: "电话号码",
+              align: "center",
+            }, {
+              field: "type",
+              title: "职位",
+              align: "center",
+              formatter: function (value) {
+                if (value == 0)
+                  return "管理员";
+                else if (value == 1)
+                  return "总经理";
+                else if (value == 2)
+                  return "部门经理";
+                else if (value == 3)
+                  return "职员";
+                else
+                  return value;
+              },
+            }, {
+              field: "login_name",
+              title: "昵称",
+              align: "center",
+            }],
+          onClickRow: function (row, $element, field) {        //鼠标点击表格记录，记录所在行变色
+            selectIndex = row.id;
+            $("tr").css("background-color", "");
+            $($element).css("background-color", "#f8f8f8");
+          },
+        });
+      </script>
+
+
+      <div class="modal small fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel">Delete Confirmation</h3>
+            </div>
+            <div class="modal-body">
+              <p class="error-text"><i class="fa fa-warning modal-icon"></i>Are you sure you want to delete the
+                user?<br>This cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
+              <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+  <script src="lib/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function () {
+      $('.demo-cancel-click').click(function () { return false; });
+    });
+  </script>
+
+
+</body>
+
+<script>
+  $(function () {
+    $('#myTab li:eq(1) a').tab('show');
+  });
+
+  var selectIndex = -1;              //当前所点击行的序号
+  var create_data = new Array;       //新增的可编辑记录的json数组，点击保存后清空
+  var delete_data = new Array;       //所删除的记录的json数组，点击保存后清空
+  var update_data = null;            //所修改的记录的json数组，单次只能修改一条记录，点击保存后赋null
+  var result = 0;
+
+  $("#userTable").bootstrapTable({
+    url: "http://118.190.90.167:8880/user",       //发送get请求的url地址
+    uniqueId: "id",      //唯一主键
+    pagination: true,       //是否分页
+    pageSize: 10,           //每页的记录行数
+    search: true,           //是否显示搜索框
+    toolbar: "#toolbar",     //工具栏容器，左上方
+    columns: [
+      {
+        field: "id",
+        title: "序号",
+        align: "center",
+        edit: false,
+      },
+      {
+        field: "name",
+        title: "姓名",
+        align: "center",
+      }, {
+        field: "tel_number",
+        title: "电话号码",
+        align: "center",
+      }, {
+        field: "type",
+        title: "职位",
+        align: "center",
+        formatter: function (value) {
+          if (value == 0)
+            return "管理员";
+          else if (value == 1)
+            return "总经理";
+          else if (value == 2)
+            return "部门经理";
+          else if (value == 3)
+            return "职员";
+          else
+            return value;
+        },
+      }, {
+        field: "login_name",
+        title: "昵称",
+        align: "center",
+      }, {
+        field: "password",
+        title: "密码",
+        align: "center"
+      }],
+    onClickRow: function (row, $element, field) {        //鼠标点击表格记录，记录所在行变色
+      selectIndex = row.id;
+      $("tr").css("background-color", "");
+      $($element).css("background-color", "#f8f8f8");
+    },
+  });
+
+  $("#create_btn").click(function () {
+    var index = create_data.length;
+    var jsonData = {
+      name: "",
+      tel_number: "",
+      type: 3,
+      login_name: "",
+      password: ""
+    }
+    initEditTest(index);
+    create_data.push(jsonData);
+    $('#table').bootstrapTable('selectPage', 1); //跳转至首页
+    var data = {
+      name: "<input type='text' name='name' value='" + create_data[index].name + "' onblur=changeData(this," + index + ")>",
+      tel_number: "<input type='text' name='tel_number' value='" + create_data[index].tel_number + "' onblur=changeData(this," + index + ")>",
+      type: "<select class='selectpicker' name='type' value='' onblur=changeData(this," + index + ")> <option value='1'>总经理</option><option value='2'>部门经理</option><option value='3' selected='selected'>职员</option></select>",
+      login_name: "<input type='text' name='login_name' value='" + create_data[index].login_name + "' onblur=changeData(this," + index + ")>",
+      password: "<input type='text' name='password' value='" + create_data[index].password + "' onblur=changeData(this," + index + ")>",
+    }; //新增的可编辑行
+
+    $('#userTable').bootstrapTable('prepend', data); //插入到表首，append插至表尾
+
+    document.getElementById("save_btn").disabled = false;
+  });
+
+  $("#delete_btn").click(function () {
+    if (selectIndex < 0) {
+      alert("请选择要删除的行");
+    }
+    else if (confirm("确认删除所选?")) {
+      var data = $('#userTable').bootstrapTable('getRowByUniqueId', selectIndex);
+      if (data.login_name == "admin") {
+        alert("管理员不可以被删除");
+        return;
+      }
+      $('#userTable').bootstrapTable('removeByUniqueId', selectIndex);
+      initEditTest(create_data.length);
+      delete_data.push(data);
+      document.getElementById("save_btn").disabled = false;
+    }
+  })
+
+  $("#update_btn").click(function () {
+    if (selectIndex < 0) {
+      alert("请选择要修改的行");
+    }
+    else {
+      var old_data = $('#userTable').bootstrapTable('getRowByUniqueId', selectIndex);
+      $('#userTable').bootstrapTable('removeByUniqueId', selectIndex);
+      update_data = old_data;
+
+      initEditTest(create_data.length);
+      var type_html;            //根据value值设置下拉框默认值selected
+      if (old_data.type == 1)
+        type_html = "<select class='selectpicker' name='type' onblur=updateData(this)><option value='1' selected='selected'>总经理</option><option value='2'>部门经理</option><option value='3'>职员</option></select>"
+      else if (old_data.type == 2)
+        type_html = "<select class='selectpicker' name='type' onblur=updateData(this)><option value='1'>总经理</option><option value='2' selected='selected'>部门经理</option><option value='3'>职员</option></select>"
+      else if (old_data.type == 3)
+        type_html = "<select class='selectpicker' name='type' onblur=updateData(this)><option value='1'>总经理</option><option value='2'>部门经理</option><option value='3' selected='selected'>职员</option></select>"
+
+      var data = {
+        name: "<input type='text' name='name' value='" + old_data.name + "' onblur=updateData(this)>",
+        tel_number: "<input type='text' name='tel_number' value='" + old_data.tel_number + "' onblur=updateData(this)>",
+        type: type_html,
+        login_name: "<input type='text' name='login_name' value='" + old_data.login_name + "' onblur=updateData(this)>",
+        password: "<input type='text' name='password' value='" + old_data.password + "' onblur=updateData(this)>",
+      };
+      $('#userTable').bootstrapTable('insertRow', {
+        index: selectIndex,
+        row: data,
+      });
+      document.getElementById("update_btn").disabled = true;
+      document.getElementById("save_btn").disabled = false;
+    }
+  })
+
+  $("#save_btn").click(function () {
+    for (i = 0; i < create_data.length; i++) {
+      postJSON(JSON.stringify(create_data[i]));
+      switch (result) {
+        case "101":
+          alert("手机号码长度应为11位");
+          return;
+        case "102":
+          alert("手机号码错误");
+          return;
+        case "103":
+          alert("手机号码已存在");
+          return;
+        case "104":
+          alert("用户昵称已存在");
+          return;
+        case "300":
+          break;
+        default:
+          alert(result);
+          break;
+      }
+    }
+    for (i = 0; i < delete_data.length; i++)
+      deleteJSON(delete_data[i].id);
+    if (update_data != null) {
+      putJSON(JSON.stringify(update_data));
+      switch (result) {
+        case "101":
+          alert("手机号码长度应为11位");
+          return;
+        case "102":
+          alert("手机号码错误");
+          return;
+        case "103":
+          alert("手机号码已存在");
+          return;
+        case "104":
+          alert("用户昵称已存在");
+          return;
+        case "300":
+          break;
+        default:
+          alert(result);
+          break;
+      }
+    }
+    document.getElementById("update_btn").disabled = false;
+    document.getElementById("save_btn").disabled = true;
+    setTimeout("window.location.reload()", 500);         //延时0.5秒刷新数据，防止数据不同步
+    $('#userTable').bootstrapTable('refresh', { pageSize: 10 });
+    create_data.length = 0;
+    delete_data.length = 0;
+    updateData = null;
+  })
+
+  //光标移开修改编辑框时的触发事件，保存最后一次修改的值
+  function updateData(obj) {
+    if (obj.name == "name")
+      update_data.name = obj.value;
+    else if (obj.name == "tel_number")
+      update_data.tel_number = obj.value;
+    else if (obj.name == "type")
+      update_data.type = obj.value;
+    else if (obj.name == "login_name")
+      update_data.login_name = obj.value;
+    else if (obj.name == "password")
+      update_data.password = obj.value;
+  }
+
+  //光标移开新增编辑框时的触发事件，保存最后一次修改的值
+  function changeData(obj, index) {
+    if (obj.name == "name")
+      create_data[index].name = obj.value;
+    else if (obj.name == "tel_number")
+      create_data[index].tel_number = obj.value;
+    else if (obj.name == "type")
+      create_data[index].type = obj.value;
+    else if (obj.name == "login_name")
+      create_data[index].login_name = obj.value;
+    else if (obj.name == "password")
+      create_data[index].password = obj.value;
+  }
+
+  //初始化编辑框内数据，不调用功能正常运行，但重复点击新增按钮时，之前本次新增的编辑框的数据不会显示出来
+  function initEditTest(index) {
+    for (i = 0; i < index; i++) {
+      $('#userTable').bootstrapTable('updateCell', {
+        index: index - i - 1,
+        field: "id",
+        value: create_data[i].id
+      })
+      $('#userTable').bootstrapTable('updateCell', {
+        index: index - i - 1,
+        field: "name",
+        value: "<input type='text' name='name' value='" + create_data[i].name + "' onblur=changeData(this," + i + ")>"
+      })
+      $('#table').bootstrapTable('updateCell', {
+        index: index - i - 1,
+        field: "tel_number",
+        value: "<input type='text' name='tel_number' value='" + create_data[i].tel_number + "' onblur=changeData(this," + i + ")>"
+      })
+      var select_html;
+      if (create_data[i].type == 1)
+        select_html = "<select class='selectpicker' name='type' onblur=changeData(this," + i + ")><option value='1' selected='selected'>总经理</option><option value='2'>部门经理</option><option value='3'>职员</option></select>"
+      else if (create_data[i].type == 2)
+        select_html = "<select class='selectpicker' name='type' onblur=changeData(this," + i + ")><option value='1'>总经理</option><option value='2' selected='selected'>部门经理</option><option value='3'>职员</option></select>"
+      else if (create_data[i].type == 3)
+        select_html = "<select class='selectpicker' name='type' onblur=changeData(this," + i + ")><option value='1'>总经理</option><option value='2'>部门经理</option><option value='3' selected='selected'>职员</option></select>"
+
+      $('#userTable').bootstrapTable('updateCell', {
+        index: index - i - 1,
+        field: "type",
+        value: select_html
+      })
+      $('#userTable').bootstrapTable('updateCell', {
+        index: index - i - 1,
+        field: "login_name",
+        value: "<input type='text' name='login_name' value='" + create_data[i].login_name + "' onblur=changeData(this," + i + ")>"
+      })
+      $('#userTable').bootstrapTable('updateCell', {
+        index: index - i - 1,
+        field: "password",
+        value: "<input type='text' name='password' value='" + create_data[i].password + "' onblur=changeData(this," + i + ")>"
+      })
+    }
+  }
+
+  //发送post请求新增一条记录
+  function postJSON(jsonData) {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+      //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+      xmlhttp = new XMLHttpRequest();
+    }
+    else {
+      // IE6, IE5 浏览器执行代码
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        result = xmlhttp.responseText;
+        return result;
+      }
+    }
+    xmlhttp.open("POST", "http://118.190.90.167:8880/user", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xmlhttp.send(jsonData);
+  }
+
+  //发送delete请求根据code值删除一条记录
+  function deleteJSON(id) {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+      //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+      xmlhttp = new XMLHttpRequest();
+    }
+    else {
+      // IE6, IE5 浏览器执行代码
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var data = JSON.parse(xmlhttp.responseText);
+        return data;
+      }
+    }
+    xmlhttp.open("DELETE", "http://118.190.90.167:8880/user" + "/" + id, true);
+    xmlhttp.send();
+  }
+
+  //发送put请求修改一条记录
+  function putJSON(jsonData) {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+      //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+      xmlhttp = new XMLHttpRequest();
+    }
+    else {
+      // IE6, IE5 浏览器执行代码
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        result = xmlhttp.responseText;
+        return result;
+      }
+    }
+    xmlhttp.open("PUT", "http://118.190.90.167:8880/user", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xmlhttp.send(jsonData);
+  }
+</script>
+
+</html>

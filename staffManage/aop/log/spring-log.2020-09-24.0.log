@@ -1,0 +1,78 @@
+16:53:51.285 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 10828 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+16:53:51.292 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+16:53:52.496 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+16:53:52.504 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+16:53:52.504 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:53:52.504 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+16:53:52.753 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:53:52.753 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1413 ms
+16:53:53.148 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:53:53.311 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+16:53:53.334 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+16:53:53.344 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 2.617 seconds (JVM running for 4.203)
+16:54:02.686 [http-nio-127.0.0.1-8880-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:54:02.686 [http-nio-127.0.0.1-8880-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:54:02.691 [http-nio-127.0.0.1-8880-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+17:03:58.905 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 20284 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+17:03:58.912 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+17:04:00.601 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+17:04:00.610 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:04:00.611 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:04:00.611 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+17:04:00.742 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:04:00.742 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1769 ms
+17:04:01.176 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:04:01.345 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:04:01.367 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+17:04:01.378 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 3.049 seconds (JVM running for 4.183)
+17:04:09.557 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:04:09.558 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:04:09.564 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+17:10:49.378 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 13252 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+17:10:49.381 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+17:10:51.067 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+17:10:51.075 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:10:51.076 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:10:51.077 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+17:10:51.353 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:10:51.353 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1901 ms
+17:10:51.879 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:10:52.181 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:10:52.216 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+17:10:52.235 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 3.465 seconds (JVM running for 4.915)
+17:11:09.820 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:11:09.821 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:11:09.836 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+17:15:02.062 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 13364 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+17:15:02.065 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+17:15:05.141 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+17:15:05.161 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:15:05.163 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:15:05.163 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+17:15:05.403 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:15:05.404 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3268 ms
+17:15:06.288 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:15:06.581 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:15:06.620 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+17:15:06.635 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 5.886 seconds (JVM running for 8.121)
+17:15:09.806 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:15:09.806 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:15:09.821 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+18:05:29.669 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 14688 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+18:05:29.680 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+18:05:31.136 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+18:05:31.149 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+18:05:31.150 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:05:31.150 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+18:05:31.336 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:05:31.336 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1603 ms
+18:05:31.774 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+18:05:31.940 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+18:05:31.965 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+18:05:31.974 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 2.88 seconds (JVM running for 4.07)
+18:05:44.189 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:05:44.189 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+18:05:44.199 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+18:05:44.848 [http-nio-127.0.0.1-8880-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+18:05:45.659 [http-nio-127.0.0.1-8880-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+18:05:45.984 [http-nio-127.0.0.1-8880-exec-1] INFO  c.e.aop.controller.LoginController - 11112232 login success

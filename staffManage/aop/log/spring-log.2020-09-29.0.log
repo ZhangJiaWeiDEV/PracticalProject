@@ -1,0 +1,253 @@
+09:12:14.824 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 14864 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+09:12:14.845 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+09:12:17.597 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+09:12:17.629 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+09:12:17.629 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+09:12:17.629 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+09:12:17.841 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:12:17.841 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2846 ms
+09:12:19.002 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+09:12:19.771 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+09:12:19.818 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+09:12:19.859 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 6.665 seconds (JVM running for 14.659)
+09:13:26.870 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:13:26.870 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+09:13:26.877 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+09:13:27.691 [http-nio-127.0.0.1-8880-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:13:28.389 [http-nio-127.0.0.1-8880-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:15:03.784 [http-nio-127.0.0.1-8880-exec-8] INFO  c.e.aop.controller.UserController - !#))#*)@&#* type = 'GET', url = '/user', requestParam = '', responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=5, name=洛基, tel_number=111111111, type=1, login_name=Loki, password=123456), User(mark=0, id=6, name=浩克, tel_number=11112232, type=1, login_name=Hulk, password=12345678), User(mark=0, id=8, name=张伟, tel_number=1234, type=3, login_name=123, password=123), User(mark=0, id=9, name=钢铁侠, tel_number=1234, type=3, login_name=34, password=243), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456), User(mark=0, id=12, name=红巨人, tel_number=1111, type=2, login_name=RedHulk, password=123456)]
+09:15:19.960 [http-nio-127.0.0.1-8880-exec-3] INFO  c.e.aop.controller.UserController - !#))#*)@&#* type = 'GET', url = '/user', requestParam = '', responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=5, name=洛基, tel_number=111111111, type=1, login_name=Loki, password=123456), User(mark=0, id=6, name=浩克, tel_number=11112232, type=1, login_name=Hulk, password=12345678), User(mark=0, id=8, name=张伟, tel_number=1234, type=3, login_name=123, password=123), User(mark=0, id=9, name=钢铁侠, tel_number=1234, type=3, login_name=34, password=243), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456), User(mark=0, id=12, name=红巨人, tel_number=1111, type=2, login_name=RedHulk, password=123456)]
+09:16:02.976 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 14964 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+09:16:02.979 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+09:16:04.384 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+09:16:04.391 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+09:16:04.391 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+09:16:04.392 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+09:16:04.613 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:16:04.614 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1574 ms
+09:16:05.002 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+09:16:05.158 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+09:16:05.181 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+09:16:05.191 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 2.679 seconds (JVM running for 3.759)
+10:00:32.149 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:00:32.151 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+10:00:32.188 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 37 ms
+10:00:32.514 [http-nio-127.0.0.1-8880-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:00:32.665 [http-nio-127.0.0.1-8880-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:01:53.332 [http-nio-127.0.0.1-8880-exec-10] INFO  c.e.aop.controller.UserController - !#))#*)@&#* type = 'GET', url = '/user', requestParam = , responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=5, name=洛基, tel_number=111111111, type=1, login_name=Loki, password=123456), User(mark=0, id=6, name=浩克, tel_number=11112232, type=1, login_name=Hulk, password=12345678), User(mark=0, id=8, name=张伟, tel_number=1234, type=3, login_name=123, password=123), User(mark=0, id=9, name=钢铁侠, tel_number=1234, type=3, login_name=34, password=243), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456), User(mark=0, id=12, name=红巨人, tel_number=1111, type=2, login_name=RedHulk, password=123456)]
+14:10:26.309 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h17m20s280ms318µs900ns).
+15:31:40.644 [http-nio-127.0.0.1-8880-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.example.aop.model.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.example.aop.model.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+15:34:48.792 [http-nio-127.0.0.1-8880-exec-2] INFO  c.e.aop.controller.UserController - !#))#*)@&#* type = 'PUT', url = '/user', requestParam = User(mark=200, id=9, name=钢铁侠, tel_number=1234, type=3, login_name=34, password=123456), responseParam = 300
+16:42:47.250 [http-nio-127.0.0.1-8880-exec-8] INFO  c.e.aop.controller.UserController - !#))#*)@&#* type = 'GET', url = '/user', requestParam = , responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=5, name=洛基, tel_number=111111111, type=1, login_name=Loki, password=123456), User(mark=0, id=6, name=浩克, tel_number=11112232, type=1, login_name=Hulk, password=12345678), User(mark=0, id=8, name=张伟, tel_number=1234, type=3, login_name=123, password=123), User(mark=0, id=9, name=钢铁侠, tel_number=1234, type=3, login_name=34, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456), User(mark=0, id=12, name=红巨人, tel_number=1111, type=2, login_name=RedHulk, password=123456)]
+16:59:57.892 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 8996 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+16:59:57.895 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+17:00:08.795 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+17:00:08.879 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:00:08.880 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:00:08.881 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+17:00:09.612 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:00:09.612 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 11673 ms
+17:00:12.532 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:00:13.248 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:00:13.337 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+17:00:13.369 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 15.988 seconds (JVM running for 17.622)
+17:01:44.663 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:01:44.664 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:01:44.672 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+17:01:45.039 [http-nio-127.0.0.1-8880-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17:01:45.325 [http-nio-127.0.0.1-8880-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:01:58.380 [http-nio-127.0.0.1-8880-exec-5] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = 队长, responseParam = []
+17:03:41.344 [http-nio-127.0.0.1-8880-exec-8] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = '队长', responseParam = []
+17:10:24.134 [http-nio-127.0.0.1-8880-exec-10] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = 队长, responseParam = []
+17:11:34.853 [http-nio-127.0.0.1-8880-exec-3] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = cap, responseParam = [User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:13:15.741 [http-nio-127.0.0.1-8880-exec-7] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = a, responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:21:19.584 [http-nio-127.0.0.1-8880-exec-8] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = a, responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:21:24.490 [http-nio-127.0.0.1-8880-exec-10] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = ap, responseParam = [User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:29:35.275 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 17112 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+17:29:35.278 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+17:29:36.793 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+17:29:36.804 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:29:36.805 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:29:36.805 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+17:29:36.956 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:29:36.956 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1538 ms
+17:29:37.462 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:29:37.649 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:29:37.682 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+17:29:37.695 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 3.211 seconds (JVM running for 5.107)
+17:31:03.250 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:31:03.250 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:31:03.256 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+17:31:03.412 [http-nio-127.0.0.1-8880-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17:31:03.663 [http-nio-127.0.0.1-8880-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:31:03.795 [http-nio-127.0.0.1-8880-exec-1] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = ap, responseParam = [User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:31:11.515 [http-nio-127.0.0.1-8880-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/userByName/%E9%98%9F%E9%95%BF': {public java.util.List com.example.aop.controller.UserController.getUserByTelNumber(java.lang.String), public java.util.List com.example.aop.controller.UserController.getUserByName(java.lang.String)}] with root cause
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/userByName/%E9%98%9F%E9%95%BF': {public java.util.List com.example.aop.controller.UserController.getUserByTelNumber(java.lang.String), public java.util.List com.example.aop.controller.UserController.getUserByName(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:413)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:32:23.624 [http-nio-127.0.0.1-8880-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/userByName/%E9%98%9F%E9%95%BF': {public java.util.List com.example.aop.controller.UserController.getUserByTelNumber(java.lang.String), public java.util.List com.example.aop.controller.UserController.getUserByName(java.lang.String)}] with root cause
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/userByName/%E9%98%9F%E9%95%BF': {public java.util.List com.example.aop.controller.UserController.getUserByTelNumber(java.lang.String), public java.util.List com.example.aop.controller.UserController.getUserByName(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:413)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:32:40.144 [http-nio-127.0.0.1-8880-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/userByName/%E9%98%9F%E9%95%BF': {public java.util.List com.example.aop.controller.UserController.getUserByTelNumber(java.lang.String), public java.util.List com.example.aop.controller.UserController.getUserByName(java.lang.String)}] with root cause
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/userByName/%E9%98%9F%E9%95%BF': {public java.util.List com.example.aop.controller.UserController.getUserByTelNumber(java.lang.String), public java.util.List com.example.aop.controller.UserController.getUserByName(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:413)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:36:49.997 [main] INFO  com.example.aop.AopApplication - Starting AopApplication on LAPTOP-I5S3DBS8 with PID 20700 (E:\idea_project\aop\target\classes started by 张嘉伟的电脑 in E:\idea_project\aop)
+17:36:50.000 [main] INFO  com.example.aop.AopApplication - No active profile set, falling back to default profiles: default
+17:36:51.564 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8880 (http)
+17:36:51.573 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:36:51.574 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:36:51.574 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+17:36:51.726 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:36:51.727 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1663 ms
+17:36:52.214 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:36:52.410 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8880"]
+17:36:52.437 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8880 (http) with context path ''
+17:36:52.450 [main] INFO  com.example.aop.AopApplication - Started AopApplication in 2.939 seconds (JVM running for 4.107)
+17:37:08.455 [http-nio-127.0.0.1-8880-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:37:08.456 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:37:08.464 [http-nio-127.0.0.1-8880-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+17:37:08.628 [http-nio-127.0.0.1-8880-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17:37:08.804 [http-nio-127.0.0.1-8880-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:37:09.223 [http-nio-127.0.0.1-8880-exec-1] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = a, responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:37:13.034 [http-nio-127.0.0.1-8880-exec-2] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = ap, responseParam = [User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:37:17.134 [http-nio-127.0.0.1-8880-exec-4] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByName/{name}', requestParam = 队长, responseParam = [User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:37:23.021 [http-nio-127.0.0.1-8880-exec-6] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByName/{name}', requestParam = 黑, responseParam = [User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456)]
+17:38:58.983 [http-nio-127.0.0.1-8880-exec-9] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByName/{name}', requestParam = a, responseParam = []
+17:39:00.543 [http-nio-127.0.0.1-8880-exec-10] INFO  c.e.aop.controller.UserController - !#))#*)@&#*type = 'GET', url = '/userByLoginName/{login_name}', requestParam = a, responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456)]
+17:48:44.362 [http-nio-127.0.0.1-8880-exec-7] INFO  c.e.aop.controller.UserController - !#))#*)@&#* type = 'GET', url = '/user', requestParam = , responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=5, name=洛基, tel_number=111111111, type=1, login_name=Loki, password=123456), User(mark=0, id=6, name=浩克, tel_number=11112232, type=1, login_name=Hulk, password=12345678), User(mark=0, id=8, name=张伟, tel_number=1234, type=3, login_name=123, password=123), User(mark=0, id=9, name=钢铁侠, tel_number=1234, type=3, login_name=34, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456), User(mark=0, id=12, name=红巨人, tel_number=1111, type=2, login_name=RedHulk, password=123456)]
+17:50:05.679 [http-nio-127.0.0.1-8880-exec-3] INFO  c.e.aop.controller.UserController - !#))#*)@&#* type = 'GET', url = '/user', requestParam = , responseParam = [User(mark=0, id=1, name=null, tel_number=null, type=0, login_name=admin, password=123456), User(mark=0, id=3, name=美国队长, tel_number=120, type=2, login_name=cap, password=123456), User(mark=0, id=4, name=黑寡妇, tel_number=13984842424, type=2, login_name=blackwidow, password=123456), User(mark=0, id=5, name=洛基, tel_number=111111111, type=1, login_name=Loki, password=123456), User(mark=0, id=6, name=浩克, tel_number=11112232, type=1, login_name=Hulk, password=12345678), User(mark=0, id=8, name=张伟, tel_number=1234, type=3, login_name=123, password=123), User(mark=0, id=9, name=钢铁侠, tel_number=1234, type=3, login_name=34, password=123456), User(mark=0, id=11, name=中国队长, tel_number=110, type=2, login_name=CNcap, password=123456), User(mark=0, id=12, name=红巨人, tel_number=1111, type=2, login_name=RedHulk, password=123456)]
