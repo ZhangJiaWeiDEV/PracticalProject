@@ -1,0 +1,7 @@
+server:
+  port: 8880
+  address: 0.0.0.0
+
+opentsdb:
+  host: http://192.168.7.120
+  port: 4242
