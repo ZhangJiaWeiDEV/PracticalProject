@@ -20,9 +20,7 @@
 </head>
 
 <body class=" theme-blue">
-
-    <!-- Demo page code -->
-
+    
     <script type="text/javascript">
         $(function () {
             var match = document.cookie.match(new RegExp('color=([^;]+)'));
@@ -33,9 +31,7 @@
                 })
                 $('body').addClass('theme-' + color);
             }
-
             $('[data-popover="true"]').popover({ html: true });
-
         });
     </script>
     <style type="text/css">
@@ -60,12 +56,6 @@
         });
     </script>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="../assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
@@ -197,6 +187,7 @@
     </div>
 
     <script>
+        var serverUrl = "http://127.0.0.1:8882/";
         var user = 0;
 
         if ($.cookie("account") != "")
@@ -209,7 +200,7 @@
                 telNumber: account,
                 password: password
             }
-            user = getJSON("POST", "http://127.0.0.1:8880/login", JSON.stringify(jsonData))
+            user = getJSON("POST", serverUrl + "login", JSON.stringify(jsonData))
             setTimeout(function () {
                 switch (user) {
                     case 200:
@@ -339,7 +330,7 @@
             password: document.getElementById("signupPassword").value,
             organization: document.getElementById("organization").value
         }
-        switch (getJSON("POST", "http://127.0.0.1:8880/insertUser", JSON.stringify(jsonData))) {
+        switch (getJSON("POST", serverUrl + "insertUser", JSON.stringify(jsonData))) {
             case "100":
                 document.getElementById("telNumber").value = "";
                 document.getElementById("name").value = "";

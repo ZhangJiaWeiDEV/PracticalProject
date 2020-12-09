@@ -95,7 +95,7 @@
 				var time = input.split(" - ");
 				time[0] += " 00:00:00";
 				time[1] += " 00:00:00";
-				dataList = requestJSON("GET", "http://localhost:8880/getDailyStatistics/" + time[0] + "&" + time[1])
+				dataList = requestJSON("GET", window.app.serverUrl + "getDailyStatistics/" + time[0] + "&" + time[1])
 				for (i = 0; i < dataList.length; i++) {
 					dateList.push(dataList[i].date);
 					countList.push(dataList[i].count);

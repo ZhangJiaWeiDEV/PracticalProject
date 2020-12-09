@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<script src="https://www.layuicdn.com/layui/layui.js" charset="utf-8"></script>
-	<script src="./app.js" charset="utf-8"></script>
+	<script src="app.js"></script>
 
 	<link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css" media="all">
 
@@ -26,7 +26,7 @@
 		<div class="layui-form-item" id="pbn">
 			<label class="layui-form-label">商品名</label>
 			<div class="layui-input-inline">
-				<input type="text" name="name" id="name" lay-verify="required" value="" lay-reqtext="必填项，岂能为空？"
+				<input type="text" name="name" id="name" lay-verify="required" value="" lay-reqtext="请输入"
 					autocomplete="off" class="layui-input">
 
 			</div>
@@ -36,7 +36,7 @@
 			<label class="layui-form-label">描述</label>
 			<div class="layui-input-inline">
 				<input type="text" name="description" id="description" lay-verify="required" value=""
-					lay-reqtext="必填项，岂能为空？" autocomplete="off" class="layui-input">
+					lay-reqtext="请输入" autocomplete="off" class="layui-input">
 			</div>
 		</div>
 
@@ -72,7 +72,7 @@
 			var goodsId = window.app.getUrlParam('goodsId');
 
 			if (null != goodsId && undefined != goodsId && '' != goodsId) {
-				oldGoods = requestJSON("GET", "http://127.0.0.1:8880/getGoods/" + goodsId);
+				oldGoods = requestJSON("GET", window.app.serverUrl + "getGoods/" + goodsId);
 				form.val('example', {
 					"id": oldGoods.id,
 					"name": oldGoods.name,
@@ -89,10 +89,10 @@
 				if (null != goodsId && undefined != goodsId && '' != goodsId) {
 					data.field.id = oldGoods.id;
 					data.field.status = oldGoods.status;
-					result = requestJSON("PUT", "http://127.0.0.1:8880/updateGoods", JSON.stringify(data.field));
+					result = requestJSON("PUT", window.app.serverUrl + "updateGoods", JSON.stringify(data.field));
 				}
 				else
-					result = requestJSON("POST", "http://127.0.0.1:8880/insertGoods", JSON.stringify(data.field))
+					result = requestJSON("POST", window.app.serverUrl + "insertGoods", JSON.stringify(data.field))
 				if (result == 100) {
 					alert("操作成功");
 				}

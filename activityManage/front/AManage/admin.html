@@ -261,6 +261,7 @@
             </div>
 
             <script>
+                var serverUrl = "http://127.0.0.1:8882/";
                 var selectIndex = -1;              //当前所点击行的序号
 
                 $("#registerTable").bootstrapTable({
@@ -363,7 +364,7 @@
                 });
 
                 $("#table").bootstrapTable({
-                    url: "http://127.0.0.1:8880/getAllActivity",       //发送get请求的url地址
+                    url: serverUrl + "getAllActivity",       //发送get请求的url地址
                     uniqueId: "id",      //唯一主键
                     pagination: true,       //是否分页
                     pageSize: 10,           //每页的记录行数
@@ -429,9 +430,9 @@
                         }],
                     onClickRow: function (row, $element, field) {        //鼠标点击表格记录，记录所在行变色
                         selectIndex = row.id;
-                        $('#registerTable').bootstrapTable('refresh', { url: "http://127.0.0.1:8880/getRegisterByActivity/" + selectIndex });
-                        $('#commentTable').bootstrapTable('refresh', { url: "http://127.0.0.1:8880/getCommentByActivity/" + selectIndex });
-                        $('#likeTable').bootstrapTable('refresh', { url: "http://127.0.0.1:8880/getLikeByActivity/" + selectIndex });
+                        $('#registerTable').bootstrapTable('refresh', { url: serverUrl + "getRegisterByActivity/" + selectIndex });
+                        $('#commentTable').bootstrapTable('refresh', { url: serverUrl + "getCommentByActivity/" + selectIndex });
+                        $('#likeTable').bootstrapTable('refresh', { url: serverUrl + "getLikeByActivity/" + selectIndex });
                         $("tr").css("background-color", "");
                         $($element).css("background-color", "#f8f8f8");
                     },
@@ -451,8 +452,18 @@
                         description: document.getElementById("description").value,
                         demand: document.getElementById("demand").value
                     }
-                    getJSON("POST", "http://127.0.0.1:8880/insertActivity", JSON.stringify(jsonData));
-                    $('#table').bootstrapTable('refresh', { pageSize: 10 });
+                    if(jsonData.organization == "" || jsonData.quota == "" || jsonData.theme == "" || jsonData.location == ""
+                        || jsonData.startTime == "" || jsonData.endTime == "" || jsonData.registerStartTime == ""
+                        || jsonData.registerEndTime == "" || jsonData.description == ""){
+                            alert("*号信息必填");
+                            return;
+                        }
+                    if(getJSON("POST", serverUrl + "insertActivity", JSON.stringify(jsonData)) == 301){
+                        alert("活动主题已存在");
+                    }
+                    else{
+                        $('#table').bootstrapTable('refresh', { pageSize: 10 });
+                    }
                 }
 
                 $("#cancel_btn").click(function () {
@@ -464,8 +475,11 @@
                         if (data.status == 1) {
                             alert("该活动已被取消");
                             return;
+                        } else if(activityStatus(data.registerEndTime, endTime) == "活动结束"){
+                            alert("该活动已结束，无法取消");
+                            return;
                         }
-                        getJSON("PUT", "http://127.0.0.1:8880/cancel/" + data.id);
+                        getJSON("PUT", serverUrl + "cancel/" + data.id);
                         $('#table').bootstrapTable('refresh', { pageSize: 10 });
                     }
                 })

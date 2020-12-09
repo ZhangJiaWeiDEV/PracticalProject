@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <script src="https://www.layuicdn.com/layui/layui.js" charset="utf-8"></script>
-    <script src="./app.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
 
 	<link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css" media="all">
 
@@ -31,13 +31,13 @@
                 table = layui.table
 
 			var orderId = window.app.getUrlParam('orderId');
-            var order = requestJSON("GET", "http://127.0.0.1:8880/getOrderById/" + orderId);
+            var order = requestJSON("GET", window.app.serverUrl + "getOrderById/" + orderId);
             var idList = new Array();
             idList = order[0].goodsId.split("&");
 
             var goodsList = new Array();
             for(i = 0; i < idList.length; i++){
-                goodsList.push(requestJSON("GET", "http://127.0.0.1:8880/getGoods/" + idList[i]));
+                goodsList.push(requestJSON("GET", window.app.serverUrl + "getGoods/" + idList[i]));
             }
             
             if(goodsList.length == 0){
@@ -47,7 +47,7 @@
 			table.render({
                 elem: '#table',
                 size: 'lg',
-                url: "http://127.0.0.1:8880/getUpGoods",
+                url: window.app.serverUrl + "getUpGoods",
                 parseData: function () { //res 即为原始返回的数据
                     // console.log(res)
                     return {

@@ -141,8 +141,15 @@
         <div class="main-content">
             <table class="table" id="loginTable"></table>
             <script>
+                if ($.cookie("user") == "" || $.cookie("user") == null || $.cookie("user") == undefined) {
+                    alert("请登录");
+                    location.replace("sign-in.html");
+                }
+
+                var serverUrl = "http://127.0.0.1:8881/";
+
                 $("#loginTable").bootstrapTable({
-                    url: "http://118.190.90.167:8880/getLoginLog",       //发送get请求的url地址
+                    url: serverUrl + "getLoginLog",       //发送get请求的url地址
                     method: "get",
                     pagination: true,       //是否分页
                     pageSize: 10,           //每页的记录行数

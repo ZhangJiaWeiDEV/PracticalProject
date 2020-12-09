@@ -10,6 +10,7 @@
     <script src="https://www.layuicdn.com/layui/layui.js" charset="utf-8"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="app.js"></script>
 
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" />
@@ -98,7 +99,7 @@
             location.replace("login.html");
         }
 
-        var account = requestJSON("POST", "http://127.0.0.1:8880/getUserByTelNumber/" + $.cookie("account"));
+        var account = requestJSON("POST", window.app.serverUrl + "getUserByTelNumber/" + $.cookie("account"));
         document.getElementById("a").innerHTML = "<span class='glyphicon glyphicon-user padding-right-small' style='position:relative;top: 3px;''></span>" + account.name + " <i class='fa fa-caret-down'></i>";
 
         var goodsList = new Array();
@@ -113,7 +114,7 @@
             table.render({
                 elem: '#LAY_table_user',
                 size: 'lg',
-                url: "http://127.0.0.1:8880/getUpGoods",
+                url: window.app.serverUrl + "getUpGoods",
                 parseData: function (res) { //res 即为原始返回的数据
                     // console.log(res)
                     return {
@@ -173,7 +174,7 @@
             table2.render({
                 elem: '#small_table',
                 size: 'lg',
-                url: "http://127.0.0.1:8880/getUpGoods",
+                url: window.app.serverUrl + "getUpGoods",
                 parseData: function () { //res 即为原始返回的数据
                     // console.log(res)
                     return {
@@ -220,7 +221,7 @@
                         var goodsName = $('#goodsName').val();
                         //执行重载
                         table.reload('testReload', {
-                            url: "http://127.0.0.1:8880/getGoodsByName/" + goodsName,
+                            url: window.app.serverUrl + "getGoodsByName/" + goodsName,
                             page: {
                                 page: 1 //重新从第 1 页开始
                             },
@@ -254,7 +255,7 @@
                     end: function (index, layero) {
 
                         table.reload('testReload', {
-                            url: "http://127.0.0.1:8880/getUpGoods",
+                            url: window.app.serverUrl + "getUpGoods",
                         }, 'data');
                     }
                 });
@@ -269,7 +270,7 @@
                 if (layEvent == 'join') {
                     goodsList.push(data);
                     table.reload('testReload1', {
-                        url: "http://127.0.0.1:8880/getUpGoods",
+                        url: window.app.serverUrl + "getUpGoods",
                     }, 'data');
                 }
             });
@@ -294,7 +295,7 @@
                     }
                     var date = new Date();
                     var jsonData = {
-                        userId: 4,
+                        userId: account.id,
                         goodsId: idList.join("&"),
                         price: totalCost(),
                         address: "宿舍",
@@ -302,9 +303,9 @@
                         status: 0
                     }
                     goodsList = [];
-                    requestJSON("POST", "http://127.0.0.1:8880/insertOrder", JSON.stringify(jsonData));
+                    requestJSON("POST", window.app.serverUrl + "insertOrder", JSON.stringify(jsonData));
                     table.reload('testReload1', {
-                        url: "http://127.0.0.1:8880/getUpGoods",
+                        url: window.app.serverUrl + "getUpGoods",
                     }, 'data');
                 });
             }

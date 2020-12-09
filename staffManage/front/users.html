@@ -25,23 +25,6 @@
 
 <body class=" theme-blue">
 
-  <!-- Demo page code -->
-
-  <script type="text/javascript">
-    $(function () {
-      var match = document.cookie.match(new RegExp('color=([^;]+)'));
-      if (match) var color = match[1];
-      if (color) {
-        $('body').removeClass(function (index, css) {
-          return (css.match(/\btheme-\S+/g) || []).join(' ')
-        })
-        $('body').addClass('theme-' + color);
-      }
-
-      $('[data-popover="true"]').popover({ html: true });
-
-    });
-  </script>
   <style type="text/css">
     #line-chart {
       height: 300px;
@@ -55,35 +38,6 @@
       color: #fff;
     }
   </style>
-
-  <script type="text/javascript">
-    $(function () {
-      var uls = $('.sidebar-nav > ul > *').clone();
-      uls.addClass('visible-xs');
-      $('#main-menu').append(uls.clone());
-    });
-  </script>
-
-  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-  <!-- Le fav and touch icons -->
-  <link rel="shortcut icon" href="../assets/ico/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-
-
-  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
-  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
-  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
-  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
-  <!--[if (gt IE 9)|!(IE)]><!-->
-
-  <!--<![endif]-->
 
   <div class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
@@ -151,13 +105,18 @@
       <table class="table" id="userTable"></table>
 
       <script>
+        if ($.cookie("user") == "" || $.cookie("user") == null || $.cookie("user") == undefined) {
+          alert("请登录");
+          location.replace("sign-in.html");
+        }
+
         $("#userTable").bootstrapTable({
-          url: "http://118.190.90.167:8880/user",       //发送get请求的url地址
-          uniqueId: "id",      //唯一主键
-          pagination: true,       //是否分页
-          pageSize: 10,           //每页的记录行数
-          search: true,           //是否显示搜索框
-          toolbar: "#toolbar",     //工具栏容器，左上方
+          url: serverUrl + "user",             //发送get请求的url地址
+          uniqueId: "id",            //唯一主键
+          pagination: true,             //是否分页
+          pageSize: 10,                     //每页的记录行数
+          search: true,                     //是否显示搜索框
+          toolbar: "#toolbar",         //工具栏容器，左上方
           columns: [
             {
               field: "id",
@@ -197,7 +156,7 @@
               title: "昵称",
               align: "center",
             }],
-          onClickRow: function (row, $element, field) {        //鼠标点击表格记录，记录所在行变色
+          onClickRow: function (row, $element, field) {                //鼠标点击表格记录，记录所在行变色
             selectIndex = row.id;
             $("tr").css("background-color", "");
             $($element).css("background-color", "#f8f8f8");
@@ -244,23 +203,30 @@
 </body>
 
 <script>
+  if ($.cookie("user") == "" || $.cookie("user") == null || $.cookie("user") == undefined) {
+    alert("请登录");
+    location.replace("sign-in.html");
+  }
+
+  var serverUrl = "http://127.0.0.1:8881/";
+
   $(function () {
     $('#myTab li:eq(1) a').tab('show');
   });
 
-  var selectIndex = -1;              //当前所点击行的序号
-  var create_data = new Array;       //新增的可编辑记录的json数组，点击保存后清空
-  var delete_data = new Array;       //所删除的记录的json数组，点击保存后清空
-  var update_data = null;            //所修改的记录的json数组，单次只能修改一条记录，点击保存后赋null
+  var selectIndex = -1;                            //当前所点击行的序号
+  var create_data = new Array;             //新增的可编辑记录的json数组，点击保存后清空
+  var delete_data = new Array;             //所删除的记录的json数组，点击保存后清空
+  var update_data = null;                        //所修改的记录的json数组，单次只能修改一条记录，点击保存后赋null
   var result = 0;
 
   $("#userTable").bootstrapTable({
-    url: "http://118.190.90.167:8880/user",       //发送get请求的url地址
-    uniqueId: "id",      //唯一主键
-    pagination: true,       //是否分页
-    pageSize: 10,           //每页的记录行数
-    search: true,           //是否显示搜索框
-    toolbar: "#toolbar",     //工具栏容器，左上方
+    url: serverUrl + "user",             //发送get请求的url地址
+    uniqueId: "id",            //唯一主键
+    pagination: true,             //是否分页
+    pageSize: 10,                     //每页的记录行数
+    search: true,                     //是否显示搜索框
+    toolbar: "#toolbar",         //工具栏容器，左上方
     columns: [
       {
         field: "id",
@@ -301,7 +267,7 @@
         title: "密码",
         align: "center"
       }],
-    onClickRow: function (row, $element, field) {        //鼠标点击表格记录，记录所在行变色
+    onClickRow: function (row, $element, field) {                //鼠标点击表格记录，记录所在行变色
       selectIndex = row.id;
       $("tr").css("background-color", "");
       $($element).css("background-color", "#f8f8f8");
@@ -360,7 +326,7 @@
       update_data = old_data;
 
       initEditTest(create_data.length);
-      var type_html;            //根据value值设置下拉框默认值selected
+      var type_html;                        //根据value值设置下拉框默认值selected
       if (old_data.type == 1)
         type_html = "<select class='selectpicker' name='type' onblur=updateData(this)><option value='1' selected='selected'>总经理</option><option value='2'>部门经理</option><option value='3'>职员</option></select>"
       else if (old_data.type == 2)
@@ -433,7 +399,7 @@
     }
     document.getElementById("update_btn").disabled = false;
     document.getElementById("save_btn").disabled = true;
-    setTimeout("window.location.reload()", 500);         //延时0.5秒刷新数据，防止数据不同步
+    setTimeout("window.location.reload()", 500);                 //延时0.5秒刷新数据，防止数据不同步
     $('#userTable').bootstrapTable('refresh', { pageSize: 10 });
     create_data.length = 0;
     delete_data.length = 0;
@@ -516,7 +482,7 @@
   function postJSON(jsonData) {
     var xmlhttp;
     if (window.XMLHttpRequest) {
-      //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+      //    IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
       xmlhttp = new XMLHttpRequest();
     }
     else {
@@ -529,7 +495,7 @@
         return result;
       }
     }
-    xmlhttp.open("POST", "http://118.190.90.167:8880/user", false);
+    xmlhttp.open("POST", serverUrl + "user", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xmlhttp.send(jsonData);
   }
@@ -538,7 +504,7 @@
   function deleteJSON(id) {
     var xmlhttp;
     if (window.XMLHttpRequest) {
-      //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+      //    IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
       xmlhttp = new XMLHttpRequest();
     }
     else {
@@ -551,7 +517,7 @@
         return data;
       }
     }
-    xmlhttp.open("DELETE", "http://118.190.90.167:8880/user" + "/" + id, true);
+    xmlhttp.open("DELETE", serverUrl + "user" + "/" + id, true);
     xmlhttp.send();
   }
 
@@ -559,7 +525,7 @@
   function putJSON(jsonData) {
     var xmlhttp;
     if (window.XMLHttpRequest) {
-      //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+      //    IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
       xmlhttp = new XMLHttpRequest();
     }
     else {
@@ -572,7 +538,7 @@
         return result;
       }
     }
-    xmlhttp.open("PUT", "http://118.190.90.167:8880/user", false);
+    xmlhttp.open("PUT", serverUrl + "user", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xmlhttp.send(jsonData);
   }

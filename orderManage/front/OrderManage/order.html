@@ -115,7 +115,7 @@
 			//方法级渲染
 			table.render({
 				elem: '#LAY_table_user',
-				url: "http://127.0.0.1:8880/getAllOrder",
+				url: window.app.serverUrl + "getAllOrder",
 				parseData: function (res) { //res 即为原始返回的数据
 					console.log(res)
 					return {
@@ -175,7 +175,7 @@
 						title: '买家名称',
 						width: 200,
 						templet: function (order) {
-							return requestJSON("GET", "http://127.0.0.1:8880/getUserById/" + order.userId).name;
+							return requestJSON("GET", window.app.serverUrl + "getUserById/" + order.userId).name;
 						}
 					},
 					{
@@ -183,7 +183,7 @@
 						title: '手机号',
 						width: 200,
 						templet: function (order) {
-							return requestJSON("GET", "http://127.0.0.1:8880/getUserById/" + order.userId).telNumber;
+							return requestJSON("GET", window.app.serverUrl + "getUserById/" + order.userId).telNumber;
 						}
 					},
 					{
@@ -212,15 +212,15 @@
 						//执行重载
 						if (id > 0) {
 							table.reload('testReload', {
-								url: "http://127.0.0.1:8880/getOrderById/" + id
+								url: window.app.serverUrl + "getOrderById/" + id
 							}, 'data');
 						} else if (status != "" && (status == 0 || status == 1 || status == 2)) {
 							table.reload('testReload', {
-								url: "http://127.0.0.1:8880/getOrderByStatus/" + status
+								url: window.app.serverUrl + "getOrderByStatus/" + status
 							}, 'data');
 						} else {
 							table.reload('testReload', {
-								url: "http://127.0.0.1:8880/getAllOrder"
+								url: window.app.serverUrl + "getAllOrder"
 							}, 'data');
 						}
 
@@ -263,9 +263,9 @@
 							alert("该订单已经被取消过了");
 						else if (data.status == 2)
 							alert("已完结的订单不可被取消")
-						else if (data.status == 0 && requestJSON("PUT", "http://127.0.0.1:8880/cancel/" + data.id) == 100) {
+						else if (data.status == 0 && requestJSON("PUT", window.app.serverUrl + "cancel/" + data.id) == 100) {
                             table.reload('testReload', {
-								url: "http://127.0.0.1:8880/getAllOrder"
+								url: window.app.serverUrl + "getAllOrder"
 							}, 'data');
                             alert("取消成功");
                         }
@@ -280,9 +280,9 @@
 							alert("已完结的订单不可再次完结");
 						else if (data.status == 1)
 							alert("已取消的订单不可完结")
-						else if (data.status == 0 && requestJSON("PUT", "http://127.0.0.1:8880/finish/" + data.id) == 100) {
+						else if (data.status == 0 && requestJSON("PUT", window.app.serverUrl + "finish/" + data.id) == 100) {
                             table.reload('testReload', {
-								url: "http://127.0.0.1:8880/getAllOrder"
+								url: window.app.serverUrl + "getAllOrder"
 							}, 'data');
                             alert("完结成功");
                         }

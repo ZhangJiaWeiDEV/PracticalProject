@@ -8,6 +8,7 @@
 
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
 	<script src="https://www.layuicdn.com/layui/layui.js" charset="utf-8"></script>
+	<script src="app.js"></script>
 
 	<link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css" media="all">
 </head>
@@ -89,10 +90,10 @@
 			//监听指定开关
 			form.on('switch(switchTest-1)', function (data) {
 				if (this.checked) {
-					requestJSON("PUT", "http://127.0.0.1:8880/upGoods/" + data.value);
+					requestJSON("PUT", window.app.serverUrl + "upGoods/" + data.value);
 					form.render();
 				} else {
-					requestJSON("PUT", "http://127.0.0.1:8880/offGoods/" + data.value);
+					requestJSON("PUT", window.app.serverUrl + "offGoods/" + data.value);
 					form.render();
 				}
 			});
@@ -101,7 +102,7 @@
 			table.render({
 				elem: '#LAY_table_user',
 				size: 'lg',
-				url: "http://127.0.0.1:8880/getAllGoods",
+				url: window.app.serverUrl + "getAllGoods",
 				parseData: function (res) { //res 即为原始返回的数据
 					// console.log(res)
 					return {
@@ -165,7 +166,7 @@
 						var goodsName = $('#goodsName').val();
 						//执行重载
 						table.reload('testReload', {
-							url: "http://127.0.0.1:8880/getGoodsByName/" + goodsName,
+							url: window.app.serverUrl + "getGoodsByName/" + goodsName,
 							page: {
 								page: 1 //重新从第 1 页开始
 							},
@@ -199,7 +200,7 @@
 					end: function (index, layero) {
 
 						table.reload('testReload', {
-							url: "http://127.0.0.1:8880/getAllGoods",
+							url: window.app.serverUrl + "getAllGoods",
 						}, 'data');
 					}
 				});
@@ -231,9 +232,9 @@
 						}
 						else {
 							for (i = 0; i < data.length; i++) {
-								requestJSON("DELETE", "http://127.0.0.1:8880/delete/" + data[i].id);
+								requestJSON("DELETE", window.app.serverUrl + "delete/" + data[i].id);
 							}
-							table.reload('testReload', {url: "http://127.0.0.1:8880/getAllGoods"}, 'data');
+							table.reload('testReload', {url: window.app.serverUrl + "getAllGoods"}, 'data');
 							layer.msg("删除成功");
 						}
 						break;

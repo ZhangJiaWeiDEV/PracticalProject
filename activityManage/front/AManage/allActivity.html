@@ -229,6 +229,7 @@
     </div>
 
     <script>
+        var serverUrl = "http://127.0.0.1:8882/";
         if ($.cookie("account") == "") {
             alert("请登录");
             location.replace("login.html");
@@ -254,8 +255,8 @@
         //当前显示的活动列表行数
         var row = 0;
 
-        activityList = requestJSON("GET", "http://127.0.0.1:8880/getAllActivity");
-        account = requestJSON("POST", "http://127.0.0.1:8880/getUserByTelNumber/" + $.cookie("account"));
+        activityList = requestJSON("GET", serverUrl + "getAllActivity");
+        account = requestJSON("POST", serverUrl + "getUserByTelNumber/" + $.cookie("account"));
 
         var user_name = account.name;
         document.getElementById("a").innerHTML = "<span class='glyphicon glyphicon-user padding-right-small' style='position:relative;top: 3px;''></span>" + user_name + " <i class='fa fa-caret-down'></i>";
@@ -289,11 +290,11 @@
                 likeTime: date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes()
             }
             if (likeStatus == true) {
-                requestJSON("DELETE", "http://127.0.0.1:8880/deleteLike", JSON.stringify(jsonData));
+                requestJSON("DELETE", serverUrl + "deleteLike", JSON.stringify(jsonData));
                 likeStatus = false;
                 document.getElementById("like_btn").innerText = "我要点赞";
             } else if (likeStatus == false) {
-                requestJSON("POST", "http://127.0.0.1:8880/like", JSON.stringify(jsonData));
+                requestJSON("POST", serverUrl + "like", JSON.stringify(jsonData));
                 likeStatus = true;
                 document.getElementById("like_btn").innerText = "取消点赞";
             }
@@ -309,11 +310,11 @@
                 registerTime: date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes()
             }
             if (registerStatus == true) {
-                requestJSON("DELETE", "http://127.0.0.1:8880/cancelRegister", JSON.stringify(jsonData));
+                requestJSON("DELETE", serverUrl + "cancelRegister", JSON.stringify(jsonData));
                 registerStatus = false;
                 document.getElementById("register_btn").innerText = "我要报名";
             } else if (registerStatus == false) {
-                requestJSON("POST", "http://127.0.0.1:8880/register", JSON.stringify(jsonData));
+                requestJSON("POST", serverUrl + "register", JSON.stringify(jsonData));
                 registerStatus = true;
                 document.getElementById("register_btn").innerText = "取消报名";
             }
@@ -328,7 +329,7 @@
                 commentTime: date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes(),
                 content: document.getElementById("commentInput").value
             }
-            commentStatus = requestJSON("POST", "http://127.0.0.1:8880/comment", JSON.stringify(jsonData));
+            commentStatus = requestJSON("POST", serverUrl + "comment", JSON.stringify(jsonData));
             document.getElementById("commentInput").value = "";
         });
 
@@ -354,7 +355,7 @@
                 else
                     break;
             }
-            activity = requestJSON("GET", "http://127.0.0.1:8880/getActivity/" + string);
+            activity = requestJSON("GET", serverUrl + "getActivity/" + string);
             document.getElementById("themeModal").innerText = activity.theme;
             document.getElementById("descriptionModal").innerText = activity.description;
             document.getElementById("locationModal").innerText = activity.location;
@@ -369,24 +370,24 @@
                 activityId: activity.id
             }
 
-            likeStatus = requestJSON("POST", "http://127.0.0.1:8880/isLikeExit", JSON.stringify(jsonData));
+            likeStatus = requestJSON("POST", serverUrl + "isLikeExit", JSON.stringify(jsonData));
             if (likeStatus == true)
                 document.getElementById("like_btn").innerText = "取消点赞";
-            registerStatus = requestJSON("POST", "http://127.0.0.1:8880/isRegisterExit", JSON.stringify(jsonData));
+            registerStatus = requestJSON("POST", serverUrl + "isRegisterExit", JSON.stringify(jsonData));
             if (registerStatus == true)
                 document.getElementById("register_btn").innerText = "取消报名";
             else if (activity.registerJSON == activity.quota && new Date(registerEndTime) <= new Date()) {
                 document.getElementById("register_btn").innerText = "报名结束";
             }
 
-            registerMember = requestJSON("GET", "http://127.0.0.1:8880/getRegisterByActivity/" + activity.id);
+            registerMember = requestJSON("GET", serverUrl + "getRegisterByActivity/" + activity.id);
             document.getElementById("registerMemberNumber").innerText = "已报名人员(" + registerMember.length + "):";
             document.getElementById("registerMember").innerText = "";
             for (i = 0; i < registerMember.length; i++) {
                 document.getElementById("registerMember").innerText += (registerMember[i].name + " 、 ");
             }
 
-            likeMember = requestJSON("GET", "http://127.0.0.1:8880/getLikeByActivity/" + activity.id);
+            likeMember = requestJSON("GET", serverUrl + "getLikeByActivity/" + activity.id);
             document.getElementById("likeMemberNumber").innerText = "点赞数(" + likeMember.length + "):";
             document.getElementById("likeTable").innerHTML = "";
             for (i = 0; i < likeMember.length; i++) {
@@ -394,7 +395,7 @@
                 $("#likeTable").append(div_child);
             }
 
-            commentMember = requestJSON("GET", "http://127.0.0.1:8880/getCommentByActivity/" + activity.id);
+            commentMember = requestJSON("GET", serverUrl + "getCommentByActivity/" + activity.id);
             document.getElementById("commentMemberNumber").innerText = "评论数(" + commentMember.length + "):";
             document.getElementById("commentTable").innerHTML = "";
             for (i = 0; i < commentMember.length; i++) {

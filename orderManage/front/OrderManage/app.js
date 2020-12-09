@@ -1,5 +1,5 @@
 window.app = {
-	serverUrl: "http://localhost:8089/sell/",
+	serverUrl: "http://127.0.0.1:8883/",
 	userInfo: {},
 	userIsLogin: false,
 	cookieDomain: "",
